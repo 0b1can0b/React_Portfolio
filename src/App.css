@@ -438,6 +438,33 @@ a:focus-visible {
   border-radius: 0.2rem;
   max-height: 75vh;
   max-width: 75vw;
+  min-height: 50vh;
+  min-width: 50vw;
+  background: rgb(0 0 0 / 50%);
+  box-shadow: 0 0 5rem rgb(0 0 0 / 50%);
+}
+
+.video_popup::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 10;
+  --size: 5rem;
+  height: var(--size);
+  width: var(--size);
+  border-radius: 50%;
+  border-style: solid;
+  border-width: calc(var(--size) / 10);
+  border-color: var(--clr_white_3);
+  border-top-color: transparent;
+  animation: loadSpin 1s linear infinite;
+}
+
+@keyframes loadSpin {
+  0% {rotate: 0}
+  100% {rotate: 360deg}
 }
 
 .video_popup::after {

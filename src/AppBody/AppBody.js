@@ -53,7 +53,7 @@ const AppBody = () => {
       >
         <div ref={popupRef} className="video_popup" onClick={handelVidPopClose}>
           <div className="close_popup" onClick={() => setOpenVidPop(false)} />
-          <video src={heroVid} autoPlay loop />
+          <video src={heroVid} autoPlay loop preload />
         </div>
       </Animate>
     </div>
