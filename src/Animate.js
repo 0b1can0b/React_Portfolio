@@ -60,6 +60,7 @@ const Animate = (props) => {
         setOpen(true);
       }
       setWaited(false);
+      setStyleFrom(from);
     }
   }, [waited]);
 
