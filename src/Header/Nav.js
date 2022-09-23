@@ -28,8 +28,8 @@ const NavItemFunction = (props) => {
             : "NavItem dropdown"
           : "NavItem"
       }
-      active={false}
-      dropdown={false}
+      // active={false}
+      // dropdown={false}
       onMouseEnter={() => props.dropdown && setDropdownActive(true)}
       onMouseLeave={() => props.dropdown && setDropdownActive(false)}
     >

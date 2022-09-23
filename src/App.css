@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
 *,
 *::before,
@@ -63,7 +64,7 @@ a:focus-visible {
 
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  /* gap: 1.5rem; */
 
   align-items: center;
 
@@ -302,8 +303,18 @@ a:focus-visible {
   text-align: center;
 }
 
-.heading_primary {
+.hero_section .heading_primary {
   font-size: 3.6rem;
+  font-weight: 700;
+}
+
+.hero_section .heading_secondary {
+  font-size: 1.5rem;
+  color: var(--clr_white_3);
+}
+
+.heading_primary {
+  font-size: 2rem;
   font-weight: 700;
 }
 
@@ -463,8 +474,12 @@ a:focus-visible {
 }
 
 @keyframes loadSpin {
-  0% {rotate: 0}
-  100% {rotate: 360deg}
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 360deg;
+  }
 }
 
 .video_popup::after {
@@ -478,6 +493,7 @@ a:focus-visible {
 
 .BgSvg {
   position: absolute;
+  z-index: -1;
 }
 
 .BgSvg1 {
@@ -488,9 +504,93 @@ a:focus-visible {
 .BgSvg2 {
   left: -12rem;
   bottom: -6rem;
-  z-index: 10;
 }
 
 .BgSvg1 stop {
   stop-color: var(--clr_2);
+}
+
+.body_section:not(:first-child) {
+  border-bottom: 1px solid var(--clr_1_1);
+  gap: 5rem;
+
+  /* REMOVE LATER */
+  /* REMOVE LATER */
+  margin-bottom: 5rem;
+  /* REMOVE LATER */
+  /* REMOVE LATER */
+}
+
+.services_headings {
+  width: 75%;
+  align-self: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.services_body {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  gap: 5rem;
+  counter-reset: service_title_counter
+}
+
+.service {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service_icon {
+  position: relative;
+}
+
+.service_icon svg {
+  --size: 4rem;
+  height: var(--size);
+  width: var(--size);
+}
+
+.service_icon rect {
+  fill: var(--clr_2);
+}
+
+.service_icon path {
+  stroke: var(--clr_white_2);
+}
+
+.service:not(:last-child) .service_icon:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 5rem / 2);
+  translate: -50% -50%;
+  height: 1px;
+  background: var(--clr_1_1);
+  width: 20vw;
+}
+
+.service_title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr_white_2);
+}
+
+.service_title:before {
+  counter-increment: service_title_counter;
+  content: counter(service_title_counter) ". ";
+}
+
+.service_subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--clr_white_3);
+}
+
+.somethingsomethingsometing {
+  font-family: "Architects Daughter";
 }

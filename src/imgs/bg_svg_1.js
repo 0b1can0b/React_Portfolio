@@ -1,7 +1,7 @@
 const BgSvg1 = () => {
   return (
     <svg width="722" height="320" fill="none" className="BgSvg BgSvg1">
-      <defs class="">
+      <defs>
         <linearGradient
           id="bg_svg_1"
           x1="-4.14"
@@ -10,9 +10,9 @@ const BgSvg1 = () => {
           y2="391.913"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5D5DFF" stop-opacity=".01"></stop>
-          <stop offset=".538" stop-color="#5D5DFF" stop-opacity=".32"></stop>
-          <stop offset="1" stop-color="#5D5DFF" stop-opacity=".01"></stop>
+          <stop stopColor="#5D5DFF" stopOpacity=".01"></stop>
+          <stop offset=".538" stopColor="#5D5DFF" stopOpacity=".32"></stop>
+          <stop offset="1" stopColor="#5D5DFF" stopOpacity=".01"></stop>
         </linearGradient>
       </defs>
       <path
