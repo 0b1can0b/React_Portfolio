@@ -54,10 +54,10 @@ const Animate = (props) => {
     if (waited) {
       if (on && !open) {
         setStyleFrom(from);
+        setOpen(true);
         setTimeout(() => {
           setStyleFrom(to);
         }, 0);
-        setOpen(true);
       }
       setWaited(false);
     }
