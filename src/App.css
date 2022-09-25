@@ -455,13 +455,18 @@ a:focus-visible {
   box-shadow: 0 0 5rem rgb(0 0 0 / 50%);
 }
 
-.video_popup::before {
+.media_bg_load {
+  position: relative;
+  isolation: isolate;
+}
+
+.media_bg_load::before {
   content: "";
   position: absolute;
   left: 50%;
   top: 50%;
   translate: -50% -50%;
-  z-index: 10;
+  z-index: -1;
   --size: 5rem;
   height: var(--size);
   width: var(--size);

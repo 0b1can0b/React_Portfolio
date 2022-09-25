@@ -45,7 +45,7 @@ const IconListItem = ({ icon, text }) => {
 const TabContent = ({ title, body, button, image, imagePosition }) => {
   const ImgComponent = () => {
     return (
-      <div className="tab_image">
+      <div className="tab_image media_bg_load">
         <img src={image} alt={image} />
       </div>
     );
@@ -97,8 +97,8 @@ const AppBody = () => {
             <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
           </svg>
         </div>
-        <div className="hero_vid_img">
-          <img src={heroVidImg} alt="hero_vid_img" />
+        <div className="hero_vid_img media_bg_load">
+          <img src={heroVidImg} alt="hero_vid_img " />
           <BgSvg2 />
         </div>
       </div>
@@ -109,7 +109,7 @@ const AppBody = () => {
         from={{ opacity: 0, transform: "translateY(10rem) scale(0.75)" }}
         to={{ opacity: 1, transform: "translateY(0) scale(1)" }}
       >
-        <div ref={popupRef} className="video_popup" onClick={handelVidPopClose}>
+        <div ref={popupRef} className="video_popup media_bg_load" onClick={handelVidPopClose}>
           <div className="close_popup" onClick={() => setOpenVidPop(false)} />
           <video src={heroVid} autoPlay loop preload />
         </div>
