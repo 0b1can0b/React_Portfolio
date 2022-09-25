@@ -35,7 +35,7 @@ const Animate = (props) => {
       setTimeout(() => {
         onEnter && onEnter();
         setEntered(true);
-      }, 10);
+      }, 0);
     } else {
       setStyleFrom(from);
       setEntered(false);
@@ -65,7 +65,7 @@ const Animate = (props) => {
 
   useEffect(() => {
     entered && setStyleFrom(to);
-    return () => {};
+    return () => {setStyleFrom(from)};
   }, [entered]);
   useEffect(() => {
     exited && setOpen(false);
