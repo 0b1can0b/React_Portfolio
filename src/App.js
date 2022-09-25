@@ -16,3 +16,12 @@ const App = () => {
 };
 
 export default App;
+
+const LOG = (log) => {
+  console.log(
+    "%cYOUR LOG HERE",
+    "border: 4px solid #555; border-radius: 4px; color: aqua; font-size: 36px; text-align: center"
+  );
+};
+
+LOG("TEST")
