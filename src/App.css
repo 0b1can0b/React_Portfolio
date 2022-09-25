@@ -887,32 +887,3 @@ a:focus-visible {
   object-fit: cover;
   filter: saturate(4) grayscale(0.8);
 }
-
-/*  */
-/*  */
-/*  */
-/* CSSTransition */
-/*  */
-/*  */
-/*  */
-
-.nav_dropdown {
-  transition: 1s;
-}
-
-.nav_dropdown.enter {
-  transform: scale(1.1) translateY(1rem);
-  opacity: 0;
-}
-.nav_dropdown.enter-active {
-  transform: scale(1) translateY(0);
-  opacity: 1;
-}
-.nav_dropdown.exit {
-  transform: scale(1) translateY(0);
-  opacity: 1;
-}
-.nav_dropdown.exit-active {
-  transform: scale(1.1) translateY(1rem);
-  opacity: 0;
-}
