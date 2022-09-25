@@ -9,6 +9,38 @@
   padding: 0;
 }
 
+.media_bg_load {
+  position: relative;
+  isolation: isolate;
+}
+
+.media_bg_load::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  --size: 5rem;
+  height: var(--size);
+  width: var(--size);
+  border-radius: 50%;
+  border-style: solid;
+  border-width: calc(var(--size) / 10);
+  border-color: var(--clr_white_3);
+  border-top-color: transparent;
+  animation: loadSpin 1s linear infinite;
+}
+
+@keyframes loadSpin {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
 :root {
   --clr_1: #151719;
   --clr_1_1: #292d30;
@@ -453,38 +485,6 @@ a:focus-visible {
   min-width: 50vw;
   background: rgb(0 0 0 / 50%);
   box-shadow: 0 0 5rem rgb(0 0 0 / 50%);
-}
-
-.media_bg_load {
-  position: relative;
-  isolation: isolate;
-}
-
-.media_bg_load::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  translate: -50% -50%;
-  z-index: -1;
-  --size: 5rem;
-  height: var(--size);
-  width: var(--size);
-  border-radius: 50%;
-  border-style: solid;
-  border-width: calc(var(--size) / 10);
-  border-color: var(--clr_white_3);
-  border-top-color: transparent;
-  animation: loadSpin 1s linear infinite;
-}
-
-@keyframes loadSpin {
-  0% {
-    rotate: 0;
-  }
-  100% {
-    rotate: 360deg;
-  }
 }
 
 .video_popup::after {

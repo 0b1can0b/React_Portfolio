@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Button from "../utils/Button.js";
 import heroVidImg from "../imgs/hero_vid_img.jpg";
 import heroVid from "../imgs/placeholder_video.mp4";
@@ -65,6 +65,19 @@ const TabContent = ({ title, body, button, image, imagePosition }) => {
 };
 
 const AppBody = () => {
+  useEffect(() => {
+    [
+      heroVidImg,
+      reviewProfile,
+      featuresIllustration,
+      tabImg1,
+      tabImg2,
+      tabImg3,
+      tabImg4,
+      tabImg5
+    ].forEach((e) => (new Image().src = e));
+  }, []);
+
   const [openVidPop, setOpenVidPop] = useState(false);
   const popupRef = useRef(null);
 
@@ -109,7 +122,11 @@ const AppBody = () => {
         from={{ opacity: 0, transform: "translateY(10rem) scale(0.75)" }}
         to={{ opacity: 1, transform: "translateY(0) scale(1)" }}
       >
-        <div ref={popupRef} className="video_popup media_bg_load" onClick={handelVidPopClose}>
+        <div
+          ref={popupRef}
+          className="video_popup media_bg_load"
+          onClick={handelVidPopClose}
+        >
           <div className="close_popup" onClick={() => setOpenVidPop(false)} />
           <video src={heroVid} autoPlay loop preload />
         </div>
