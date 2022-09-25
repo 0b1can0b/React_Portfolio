@@ -35,7 +35,7 @@ const Animate = (props) => {
       setTimeout(() => {
         onEnter && onEnter();
         setEntered(true);
-      }, 0);
+      }, 500);
     } else {
       setStyleFrom(from);
       setEntered(false);
