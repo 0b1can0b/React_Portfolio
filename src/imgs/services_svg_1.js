@@ -10,7 +10,6 @@ const ServicesSvg1 = () => {
         fillRule="evenodd"
       ></path>
       <path
-        class="at lm"
         d="M26 28h12M26 32h12M26 36h5"
         strokeWidth="2"
         strokeLinecap="square"
