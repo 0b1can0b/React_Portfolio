@@ -35,7 +35,9 @@ const Animate = (props) => {
       setTimeout(() => {
         onEnter && onEnter();
         setEntered(true);
-      }, 0);
+      // }, 0);
+      //   ^^^ this 0 here doesnt work on vercel :(
+      }, 25);
     } else {
       setStyleFrom(from);
       setEntered(false);
