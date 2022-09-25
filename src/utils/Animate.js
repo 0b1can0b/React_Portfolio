@@ -37,7 +37,7 @@ const Animate = (props) => {
         setEntered(true);
       // }, 0);
       //   ^^^ this 0 here doesnt work on vercel :(
-      }, 20);
+      }, 10);
     } else {
       setStyleFrom(from);
       setEntered(false);
