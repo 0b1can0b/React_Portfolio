@@ -8,7 +8,7 @@ const NavFunction = ({ children }) => {
 const NavItemFunction = (props) => {
   const [dropdownActive, setDropdownActive] = useState(false);
 
-  // console.log(props.dropdown);
+  console.log(props);
 
   return (
     <div
@@ -33,7 +33,7 @@ const NavItemFunction = (props) => {
       onMouseEnter={() => props.dropdown && setDropdownActive(true)}
       onMouseLeave={() => props.dropdown && setDropdownActive(false)}
     >
-      <a href={`#${props.children.split(' ').join('_')}`}>
+      <a href={`#${props.children.split(" ").join("_")}`}>
         {props.children}
         {props.dropdown && (
           <div className="dropdown_icon">
