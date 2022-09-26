@@ -3,6 +3,7 @@ import "./App.css";
 
 import Header from "./Header/Header.js";
 import AppBody from "./AppBody/AppBody.js";
+import Footer from "./Footer/Footer.js";
 
 console.clear();
 
@@ -11,6 +12,7 @@ const App = () => {
     <div className="App">
       <Header />
       <AppBody />
+      <Footer />
     </div>
   );
 };

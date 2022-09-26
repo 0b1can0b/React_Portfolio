@@ -22,6 +22,14 @@ import TabHeadIcon2 from "../imgs/tab_head_icon_2.js";
 import TabHeadIcon3 from "../imgs/tab_head_icon_3.js";
 import TabHeadIcon4 from "../imgs/tab_head_icon_4.js";
 import TabHeadIcon5 from "../imgs/tab_head_icon_5.js";
+import targetImage from "../imgs/target_image.png";
+import newsImage1 from "../imgs/news-01.jpg";
+import newsImage2 from "../imgs/news-02.jpg";
+import newsImage3 from "../imgs/news-03.jpg";
+import newsProfileImg1 from "../imgs/news-author-01.jpg";
+import newsProfileImg2 from "../imgs/news-author-02.jpg";
+import newsProfileImg3 from "../imgs/news-author-03.jpg";
+import SubSvg from  "../imgs/newsletter-svg.js";
 
 const ServiceComponent = ({ icon, title, subtitle }) => {
   return (
@@ -64,6 +72,63 @@ const TabContent = ({ title, body, button, image, imagePosition }) => {
   );
 };
 
+const TargetSectionItem = ({ title, body }) => {
+  return (
+    <div className="TargetSectionItem">
+      <div className="target_section_title">{title}</div>
+      <div className="target_section_body">{body}</div>
+    </div>
+  );
+};
+
+const NewsItem = ({
+  image,
+  category,
+  title,
+  body,
+  profileImg,
+  author,
+  date
+}) => {
+  return (
+    <div className="NewsItem">
+      <div className="news_image">
+        <a href={`#${title.split(" ").join("_")}`}>
+          <img src={image} alt={image} />
+        </a>
+      </div>
+      <div className="news_category">
+        {category.map((e, i) => {
+          return (
+            <a
+              key={i}
+              href={`#${e}`}
+              className={`news_category_item TEXT-${e.split(" ").join("_")}`}
+            >
+              {e}
+            </a>
+          );
+        })}
+      </div>
+      <div className="news_title">
+        <a href={`#${title.split(" ").join("_")}`}>{title}</a>
+      </div>
+      <div className="news_body">{body}</div>
+      <div className="bottom">
+        <div className="news_profileImg">
+          <a href={`#${author.split(" ").join("_")}`}>
+            <img src={profileImg} alt={profileImg} />
+          </a>
+        </div>
+        <div className="news_author">
+          <a href={`#${author.split(" ").join("_")}`}>{author}</a>
+        </div>
+        <div className="news_date">{date}</div>
+      </div>
+    </div>
+  );
+};
+
 const AppBody = () => {
   useEffect(() => {
     [
@@ -74,7 +139,14 @@ const AppBody = () => {
       tabImg2,
       tabImg3,
       tabImg4,
-      tabImg5
+      tabImg5,
+      targetImage,
+      newsImage1,
+      newsImage2,
+      newsImage3,
+      newsProfileImg1,
+      newsProfileImg2,
+      newsProfileImg3
     ].forEach((e) => (new Image().src = e));
   }, []);
 
@@ -133,7 +205,7 @@ const AppBody = () => {
       </Animate>
 
       <div className="body_section services_section">
-        <div className="services_headings">
+        <div className="services_section_headings">
           <div className="heading_primary">Built exclusively for you</div>
           <div className="heading_secondary">
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
@@ -262,6 +334,93 @@ const AppBody = () => {
             />
           </Tab>
         </Tabs>
+      </div>
+
+      <div className="body_section target_section">
+        <div className="target_section_heading">
+          <div className="heading_primary">
+            From the big picture to every tiny detail, we got you covered.
+          </div>
+        </div>
+        <div className="target_section_bottom">
+          <div className="target_section_left">
+            <img src={targetImage} alt="target_image" />
+          </div>
+          <div className="target_section_right">
+            <div className="sub_heading">Be the change you want to see</div>
+            <div className="target_section_items">
+              <TargetSectionItem
+                title="For developers"
+                body="Eaque dignissimos, labore earum pariatur laboriosam rerum accusamus molestias! A, itaque cupiditate. Temporibus, fugit, nostrum similique officia voluptas, maiores iusto nisi earum excepturi ducimus atque distinctio eveniet nesciunt."
+              />
+              <TargetSectionItem
+                title="For designers"
+                body="Suscipit ab dolorem architecto, exercitationem officia iste incidunt iure ipsum nobis quae fugit veniam! Molestiae quod, repellendus quam autem laborum sequi quidem nihil iste vel sunt soluta reiciendis."
+              />
+              <TargetSectionItem
+                title="For teams"
+                body="Voluptas dolore eaque quidem dolores provident maiores harum, aperiam itaque saepe iusto. Veritatis porro, vero quibusdam voluptatum iusto maxime, delectus assumenda iure tenetur itaque culpa harum ab optio."
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="body_section news_section">
+        <div className="news_section_heading">
+          <div className="heading_primary">
+            Refreshing news for developers and designers
+          </div>
+        </div>
+        <div className="news">
+          <NewsItem
+            image={newsImage1}
+            category={["Product", "Engineering"]}
+            title="Officia, deleniti repellendus minima optio aliquid ullam harum!"
+            body="Voluptatum necessitatibus aliquam quisquam ut voluptatem asperiores, possimus corporis esse corrupti eligendi rem provident quam expedita consequuntur cupiditate tempora quidem aut excepturi."
+            profileImg={newsProfileImg1}
+            author="Anastasia Dan"
+            date="Jan 17, 2020"
+          />
+          <NewsItem
+            image={newsImage2}
+            category={["Desing", "Engineering"]}
+            title="Animi optio, facere aspernatur sapiente ea cum magnam!"
+            body="Ullam fuga laboriosam laborum! Laborum blanditiis distinctio culpa aliquam accusantium saepe a! Sunt voluptate, similique fugit facere cumque maiores aperiam tempore nesciunt."
+            profileImg={newsProfileImg2}
+            author="Markus Barker"
+            date="Jan 12, 2020"
+          />
+          <NewsItem
+            image={newsImage3}
+            category={["Product", "Tutorials and articles"]}
+            title="Consequuntur voluptatibus ipsam facere, ipsa quaerat error adipisci?"
+            body="Officiis sequi molestias odit, dolore, magnam impedit nostrum tempore vitae quos quibusdam, ab voluptatem exercitationem dolorum facilis assumenda minima atque iste nihil?"
+            profileImg={newsProfileImg3}
+            author="Lisa Crockett"
+            date="Jan 9, 2020"
+          />
+        </div>
+      </div>
+
+      <div className="newsletter_section">
+        <div className="newsletter_left">
+          <div className="heading_primary">Stay in the loop</div>
+          <div className="heading_secondary">
+            Join our newsletter to get top news before anyone else.
+          </div>
+        </div>
+        <div className="newsletter_right">
+          <div className="sub_input_container">
+            <input
+              className="sub_input"
+              type="text"
+              placeholder="Your best email…"
+            />
+          </div>
+          <button className="sub_button">Subscribe</button>
+        </div>
+        <SubSvg />
       </div>
     </div>
   );
