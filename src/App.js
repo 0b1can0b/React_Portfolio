@@ -16,6 +16,8 @@ const App = () => {
 
     targets.forEach((target) => target.classList.add("scroll_animation"))
 
+    document.querySelector('body').style.opacity = 1;
+
     function handleIntersection(entries) {
       entries.forEach((entry, index) => {
         setTimeout(() => {
